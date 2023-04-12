@@ -1,12 +1,13 @@
 import { useState } from "react"
 
-const RangeVote = ({skillPointsList, setSkillPointsList, skillName}) => {
+const RangeVote = ({skillPointsObject, setSkillPointsObject, skillName}) => {
     const [point, setPoint] = useState();
     
     const handleVoteChange = (e) => {
         console.log(e.target.value);
         setPoint(e.target.value);
         console.log(skillName);
+        setSkillPointsObject({...skillPointsObject, [skillName]: point});
     }
     return (
         <div className="range-input-wrapper">

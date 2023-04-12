@@ -24,26 +24,27 @@ const initialSkills = [
   ];
 
 const FormVote = () => {
-    const [skillPointsList, setSkillPointsList] = useState([]);
+    const [skillPointsObject, setSkillPointsObject] = useState({});
 
     const fillInitialState = () => {
-        const skillsList = []
+        const skillsObj= {}
         // initialSkills.map((skill)=> skillsList.push({[skill]: 0 }));
-        initialSkills.map((skill)=> skillsList.push({ name: skill, points : 0 }));
+        // initialSkills.map((skill)=> skillsList.push({ name: skill, points : 0 }));
+        initialSkills.map((skill)=> Object.assign(skillsObj, {[skill]: 0 } ) )
 
-        console.log('skills list', skillsList);
-        setSkillPointsList(skillsList);
-        console.log('skillstate', skillPointsList);
+        console.log('skills list', skillsObj);
+        setSkillPointsObject(skillsObj);
+        console.log('skillstate', skillPointsObject);
     };
 
     useEffect( fillInitialState, []);
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        console.log("state", skillPointsList);
+        console.log("state", skillPointsObject);
     }
     
-    const skillInputs = initialSkills.map((skill) => <RangeVote key={skill} skillPointsList={skillPointsList} setSkillPointsList={setSkillPointsList} skillName={skill}/>)
+    const skillInputs = initialSkills.map((skill) => <RangeVote key={skill} skillPointsObject={skillPointsObject} setSkillPointsObject={setSkillPointsObject} skillName={skill}/>)
 
     return (
         <form className="form-vote" onSubmit={handleFormSubmit}>

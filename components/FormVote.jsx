@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import RangeVote from "./RangeVote";
+import { sendResults } from "@/actions";
 
 const initialSkills = [
     "Coding Ninja",
@@ -40,12 +41,13 @@ const FormVote = () => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         console.log("state", skillPointsObject);
+        sendResults(skillPointsObject)
     }
-    
-    const skillInputs = initialSkills.map((skill) => 
+
+    const skillInputs = initialSkills.map((skill) =>
     <RangeVote
-     key={skill} 
-     skillPointsObject={skillPointsObject} 
+     key={skill}
+     skillPointsObject={skillPointsObject}
      setSkillPointsObject={setSkillPointsObject}
       skillName={skill}
     />
@@ -61,5 +63,5 @@ const FormVote = () => {
         </form>
     )
 }
-    
+
 export default FormVote;

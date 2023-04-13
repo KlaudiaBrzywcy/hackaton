@@ -7,20 +7,20 @@ const initialSkills = [
     "GIT",
     "Shell",
     "Automated Testing",
-    "Web Security",
-    "Technical Consultant",
-    "Documentation Keeper",
-    "Delivery",
-    "Knowledge Guide",
-    "API",
-    "Docker",
-    "Typescript",
-    "Architecture",
-    "Frontend performance guide",
-    "Interface Producer",
-    "Javascript",
-    "Angular",
-    "React"
+    // "Web Security",
+    // "Technical Consultant",
+    // "Documentation Keeper",
+    // "Delivery",
+    // "Knowledge Guide",
+    // "API",
+    // "Docker",
+    // "Typescript",
+    // "Architecture",
+    // "Frontend performance guide",
+    // "Interface Producer",
+    // "Javascript",
+    // "Angular",
+    // "React"
   ];
 
 const FormVote = () => {
@@ -28,8 +28,6 @@ const FormVote = () => {
 
     const fillInitialState = () => {
         const skillsObj= {}
-        // initialSkills.map((skill)=> skillsList.push({[skill]: 0 }));
-        // initialSkills.map((skill)=> skillsList.push({ name: skill, points : 0 }));
         initialSkills.map((skill)=> Object.assign(skillsObj, {[skill]: 0 } ) )
 
         console.log('skills list', skillsObj);
@@ -44,7 +42,14 @@ const FormVote = () => {
         console.log("state", skillPointsObject);
     }
     
-    const skillInputs = initialSkills.map((skill) => <RangeVote key={skill} skillPointsObject={skillPointsObject} setSkillPointsObject={setSkillPointsObject} skillName={skill}/>)
+    const skillInputs = initialSkills.map((skill) => 
+    <RangeVote
+     key={skill} 
+     skillPointsObject={skillPointsObject} 
+     setSkillPointsObject={setSkillPointsObject}
+      skillName={skill}
+    />
+    )
 
     return (
         <form className="form-vote" onSubmit={handleFormSubmit}>
@@ -52,6 +57,7 @@ const FormVote = () => {
              <div>
                 <button type="submit">Submit</button>
              </div>
+             <p>{Object.values(skillPointsObject)}</p>
         </form>
     )
 }

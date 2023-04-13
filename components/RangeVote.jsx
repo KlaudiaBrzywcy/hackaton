@@ -7,8 +7,6 @@ const RangeVote = ({skillPointsObject, setSkillPointsObject, skillName}) => {
     const handleStateAndErrMsg = () => {
         setSkillPointsObject({...skillPointsObject, [skillName]: point});
         Object.values(skillPointsObject).includes(point) ? setErrMsg('The value has already been used, pick different one') : setErrMsg('');
-
-
     }
 
     useEffect(handleStateAndErrMsg,[point])

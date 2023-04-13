@@ -1,0 +1,65 @@
+.container {
+  background-color: black;
+}
+
+.list {
+  margin: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list li {
+  padding: 20px 20px;
+  cursor: pointer;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Set the background color with a transparent white color */
+  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.5); /* Add a box shadow with a transparent white color */
+  border-radius: 10px; /* Set the border radius to create rounded corners */
+  opacity: 0.8; /* Set the opacity to create a glass-like effect */
+  transition: all 0.3s ease-in-out; /* Add a transition effect */
+}
+
+.list li:hover {
+  transform: scale(1.05); /* On hover, scale the list item up slightly */
+  background: #00ee4d;
+}
+
+.container button[type="submit"] {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.1)
+  ); /* Set the background to a gradient */
+  background-image: linear-gradient(
+    to bottom right,
+    #b4dfe5,
+    #f4a261
+  ); /* Add a glassmorphic effect */
+  border: none; /* Remove the border */
+  border-radius: 40px; /* Add some border radius */
+  box-shadow: 10px 10px 30px rgba(178, 223, 229, 0.5),
+    -10px -10px 30px rgba(244, 162, 97, 0.5); /* Add a box shadow */
+  color: white; /* Set the text color */
+  cursor: pointer; /* Change the cursor to a hand */
+  font-size: 1.2rem; /* Set the font size */
+  padding: 12px 32px; /* Add some padding */
+  text-transform: uppercase; /* Convert the text to uppercase */
+  transition: all 0.3s ease-in-out; /* Add a transition effect */
+  outline: none; /* Remove the outline */
+}
+
+.container button[type="submit"]:hover {
+  background: linear-gradient(
+    to bottom right,
+    #f4a261,
+    #b4dfe5
+  ); /* On hover, change the gradient */
+  box-shadow: 10px 10px 30px rgba(244, 162, 97, 0.5),
+    -10px -10px 30px rgba(178, 223, 229, 0.5); /* Add a stronger box shadow */
+  transform: translateY(-2px); /* On hover, move the button up slightly */
+}
